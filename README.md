@@ -89,12 +89,20 @@ In `03_feature_engineering.ipynb`, the following preprocessing tasks were comple
 - Dropped the original `SalePrice` column (we will use the log-transformed version for modeling)
 - Saved the fully preprocessed dataset as `house_prices_preprocessed.csv` in the `data/` folder
 
+### ✅ Modeling & Evaluation
+
+In `04_model_training.ipynb`, a machine learning pipeline was implemented to predict house sale prices:
+
+- Used the log-transformed `SalePrice_log` as the target variable
+- Split the data into **training and test sets**
+- Trained a **Linear Regression model** using `scikit-learn`
+- Evaluated the model with **R² score** and **RMSE** to check performance
+- Saved the trained model using `joblib` to the `models/` directory as `linreg_model.joblib`
+
 
 ---
 
 ## 📅 Next Steps (Planned)
-
-- Train basic regression models (e.g., Linear Regression, Random Forest)
 
 - Deploy model into the Streamlit app
 
