@@ -106,6 +106,15 @@ In `04_model_training.ipynb`, a machine learning pipeline was implemented to pre
 - The summary page outlines the project goals, objectives, and tools used
 - Registered the page inside `streamlit_app.py` for streamlined navigation
 
+### ✅ Streamlit Interface: Data Insights Page
+
+- Created `page_data_visuals.py` to present key exploratory data visualisations
+- Added three key plots to explore correlation with house prices:
+  - **Scatter plot** of `SalePrice` vs `GrLivArea` (Above-Ground Living Area)
+  - **Box plot** of `SalePrice` vs `OverallQual` (Overall House Quality)
+  - **Heatmap** of top 10 numeric features most correlated with `SalePrice`
+- Registered the page in `streamlit_app.py` for sidebar navigation
+- Highlighted strong predictors such as `GrLivArea`, `OverallQual`, and `GarageArea`
 
 ---
 
