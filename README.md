@@ -69,11 +69,20 @@ In `01_data_exploration.ipynb`, the following have been completed:
 
 - Initial visualizations of key outliers (`SalePrice`, `GrLivArea`, `LotArea`)
 
+### ✅ Data Cleaning
+
+In `02_data_cleaning.ipynb`, the following cleaning steps were completed:
+
+- **Duplicates removed** to prevent bias in modeling
+- **Columns with >30% missing data** were dropped to simplify handling
+- **Numerical columns** had missing values filled with the **median**
+- **Categorical columns** had missing values filled with the **mode**
+- The `SalePrice` column was **log-transformed** to reduce skewness in the target variable
+- The cleaned dataset was saved as `house_prices_cleaned.csv` in the `data/` folder
+
 ---
 
 ## 📅 Next Steps (Planned)
-
-- Clean missing values and outliers
 
 - Feature engineering (log-transform skewed variables, encode categoricals)
 
