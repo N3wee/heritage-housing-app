@@ -80,11 +80,19 @@ In `02_data_cleaning.ipynb`, the following cleaning steps were completed:
 - The `SalePrice` column was **log-transformed** to reduce skewness in the target variable
 - The cleaned dataset was saved as `house_prices_cleaned.csv` in the `data/` folder
 
+### ✅ Feature Engineering
+
+In `03_feature_engineering.ipynb`, the following preprocessing tasks were completed:
+
+- Loaded the cleaned dataset
+- Applied **One-Hot Encoding** to all categorical features using `pd.get_dummies()`
+- Dropped the original `SalePrice` column (we will use the log-transformed version for modeling)
+- Saved the fully preprocessed dataset as `house_prices_preprocessed.csv` in the `data/` folder
+
+
 ---
 
 ## 📅 Next Steps (Planned)
-
-- Feature engineering (log-transform skewed variables, encode categoricals)
 
 - Train basic regression models (e.g., Linear Regression, Random Forest)
 
