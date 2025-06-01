@@ -99,6 +99,13 @@ In `04_model_training.ipynb`, a machine learning pipeline was implemented to pre
 - Evaluated the model with **R² score** and **RMSE** to check performance
 - Saved the trained model using `joblib` to the `models/` directory as `linreg_model.joblib`
 
+### ✅ Streamlit Interface: Project Summary Page
+
+- Implemented the `MultiPage` helper class to enable sidebar navigation between different app pages
+- Created `page_project_summary.py` to serve as the landing page for the Streamlit app
+- The summary page outlines the project goals, objectives, and tools used
+- Registered the page inside `streamlit_app.py` for streamlined navigation
+
 
 ---
 
