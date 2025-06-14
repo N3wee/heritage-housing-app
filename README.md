@@ -91,13 +91,24 @@ In `03_feature_engineering.ipynb`, the following preprocessing tasks were comple
 
 ### ✅ Modeling & Evaluation
 
-In `04_model_training.ipynb`, a machine learning pipeline was implemented to predict house sale prices:
+In `04_model_training.ipynb`, a Linear Regression model was trained to predict house sale prices using the log-transformed `SalePrice_log` as the target. Key steps:
 
-- Used the log-transformed `SalePrice_log` as the target variable
-- Split the data into **training and test sets**
-- Trained a **Linear Regression model** using `scikit-learn`
-- Evaluated the model with **R² score** and **RMSE** to check performance
-- Saved the trained model using `joblib` to the `models/` directory as `linreg_model.joblib`
+-   Selected six predictive features:\
+    `OverallQual`, `GrLivArea`, `GarageArea`, `YearBuilt`, `TotalBsmtSF`, `LotArea`
+
+-   Built a `scikit-learn` pipeline to handle missing values and fit the model
+
+-   Split the data into **training and test sets**
+
+-   Evaluated the model performance:
+
+    -   **R² Score:** *0.842*
+
+    -   **RMSE:** *0.172*
+
+-   Plotted **actual vs. predicted** values for test set to validate predictions
+
+-   Saved the trained pipeline as `linreg_model.joblib` in the
 
 ### ✅ Streamlit Interface: Project Summary Page
 
