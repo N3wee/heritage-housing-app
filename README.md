@@ -127,6 +127,22 @@ In `04_model_training.ipynb`, a Linear Regression model was trained to predict h
 - Registered the page in `streamlit_app.py` for sidebar navigation
 - Highlighted strong predictors such as `GrLivArea`, `OverallQual`, and `GarageArea`
 
+
+### ✅ Streamlit Interface: Predict House Price Page
+
+- Added a page titled **"Predict House Price"** to the Streamlit app using the `MultiPage` system.
+- This page allows users to input specific house attributes such as:
+  - Overall Quality
+  - Above-Ground Living Area
+  - Garage Area
+  - Year Built
+  - Total Basement Area
+  - Lot Area
+- When the form is submitted, the app uses the trained Linear Regression model to predict the house price.
+- The model predicts a log-transformed sale price, which is then converted back to dollars using `np.expm1()`.
+- Displays the result in an easy-to-read format such as:  
+  `💰 Estimated Sale Price: $217,000`
+
 ---
 
 ## 📅 Next Steps (Planned)
