@@ -1,9 +1,11 @@
 import streamlit as st
 
+
 def page_home_body():
     st.title("🏠 Heritage Housing Price Estimator")
-    
-    st.markdown("""
+
+    st.markdown(
+        """
     Welcome to the **Heritage Housing Price Estimator**!
 
     This app allows you to:
@@ -25,4 +27,5 @@ def page_home_body():
     - Machine learning modeling
     - Streamlit web app development
     - Model deployment and project presentation
-    """)
+    """
+    )

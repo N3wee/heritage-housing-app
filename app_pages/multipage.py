@@ -8,5 +8,8 @@ class MultiPage:
 
     def run(self):
         import streamlit as st
-        page = st.sidebar.selectbox("Navigation", self.pages, format_func=lambda p: p["title"])
+
+        page = st.sidebar.selectbox(
+            "Navigation", self.pages, format_func=lambda p: p["title"]
+        )
         page["function"]()
