@@ -143,6 +143,18 @@ In `04_model_training.ipynb`, a Linear Regression model was trained to predict h
 - Displays the result in an easy-to-read format such as:  
   `💰 Estimated Sale Price: $217,000`
 
+
+### ✅ Streamlit Interface: Hypothesis & Validation Page
+
+- Created a page to present and validate key project hypotheses using visualizations.
+- Hypotheses tested:
+  1. **Overall Quality** is positively correlated with **Sale Price**
+     - Validated using a **box plot**, showing clear upward trend in price by quality level.
+  2. **Above-Ground Living Area** is positively correlated with **Sale Price**
+     - Validated using a **scatter plot**, revealing a strong linear trend.
+- Data used was the cleaned dataset (`house_prices_cleaned.csv`).
+- Visuals generated using `Seaborn` and `Matplotlib`.
+
 ---
 
 ## 📅 Next Steps (Planned)
