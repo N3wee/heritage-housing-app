@@ -157,9 +157,17 @@ In `04_model_training.ipynb`, a Linear Regression model was trained to predict h
 
 ---
 
-## 📅 Next Steps (Planned)
+## 🚀 Deployment
 
-- Deploy model into the Streamlit app
+- The application is deployed on **Heroku** and accessible online.
+- The deployed app includes all functionality:
+  - Project summary
+  - Exploratory data visuals
+  - Hypothesis testing
+  - House price prediction using a trained Linear Regression model
+- Model artifacts (`linreg_model.joblib`) are stored in the `models/` directory and loaded on demand.
+
+🔗 **Live App:** [https://heritage-housing-2025-04528934543f.herokuapp.com](https://heritage-housing-2025-04528934543f.herokuapp.com)
 
 ---
 
