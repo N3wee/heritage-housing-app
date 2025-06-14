@@ -15,14 +15,15 @@ The app will:
 
 ---
 
-## 🧠 Learning Objectives Addressed So Far
+## 🌟 App Preview
 
-| LO | Description |
-|----|-------------|
-| LO1 | Demonstrated understanding of dataset and business context |
-| LO2 | Began mapping business requirements to data analysis tasks |
-| LO4 | Performed data analysis to extract early insights |
-| LO7 | Successfully loaded and processed data from a local source |
+| Home | Data Insights |
+|------|---------------|
+| ![Home](images/home.png) | ![Data](images/data_insights.png) |
+
+| Hypothesis Validation | Price Prediction |
+|-----------------------|------------------|
+| ![Hypothesis](images/hypothesis.png) | ![Predict](images/predict.png) |
 
 ---
 
