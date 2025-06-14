@@ -1,38 +1,45 @@
-# import streamlit as st
-# import pandas as pd
-# import joblib
-# import numpy as np
+# 📄 app_pages/page_price_prediction.py
 
-# def page_price_prediction_body():
-#     st.title("🏷️ Predict House Sale Price")
+import streamlit as st
+import pandas as pd
+import joblib
+import numpy as np
 
-#     st.markdown("### Enter property details to estimate the sale price")
+def page_price_prediction_body():
+    st.title("🏠 Predict House Sale Price")
 
-#     # Define form
-#     with st.form("prediction_form"):
-#         overall_qual = st.selectbox("Overall Quality (1–10)", list(range(1, 11)), index=5)
-#         gr_liv_area = st.number_input("Above-Ground Living Area (sq ft)", min_value=500, max_value=5000, value=1500)
-#         garage_area = st.number_input("Garage Area (sq ft)", min_value=0, max_value=1500, value=400)
-#         year_built = st.number_input("Year Built", min_value=1870, max_value=2023, value=1995)
-#         full_bath = st.selectbox("Number of Full Bathrooms", [0, 1, 2, 3], index=1)
+    st.info("Use the form below to input features of a house and predict its sale price in Ames, Iowa.")
 
-#         submit = st.form_submit_button("Estimate Price")
+    # Load the trained model
+    try:
+        model = joblib.load("models/linreg_model.joblib")
+    except Exception as e:
+        st.error(f"Error loading model: {e}")
+        return
 
-#     if submit:
-#         # Create DataFrame with matching feature names from training
-#         input_data = pd.DataFrame({
-#             'OverallQual': [overall_qual],
-#             'GrLivArea': [gr_liv_area],
-#             'GarageArea': [garage_area],
-#             'YearBuilt': [year_built],
-#             'FullBath': [full_bath]
-#         })
+    # Input form
+    with st.form("prediction_form"):
+        overall_qual = st.slider("Overall Quality", min_value=1, max_value=10, value=5)
+        gr_liv_area = st.number_input("Above Ground Living Area (sq ft)", value=1500)
+        garage_area = st.number_input("Garage Area (sq ft)", value=400)
+        year_built = st.number_input("Year Built", min_value=1800, max_value=2024, value=1990)
+        total_bsmt_sf = st.number_input("Total Basement Area (sq ft)", value=800)
+        lot_area = st.number_input("Lot Area (sq ft)", value=8000)
 
-#         try:
-#             model = joblib.load("models/linreg_model.joblib")
-#             prediction_log = model.predict(input_data)[0]
-#             prediction = np.expm1(prediction_log)
+        submit = st.form_submit_button("Predict Price")
 
-#             st.success(f"🏠 Estimated Sale Price: **${prediction:,.0f}**")
-#         except Exception as e:
-#             st.error(f"❌ Error loading model or making prediction: {e}")
+    # Run prediction
+    if submit:
+        input_data = pd.DataFrame({
+            'OverallQual': [overall_qual],
+            'GrLivArea': [gr_liv_area],
+            'GarageArea': [garage_area],
+            'YearBuilt': [year_built],
+            'TotalBsmtSF': [total_bsmt_sf],
+            'LotArea': [lot_area]
+        })
+
+        log_price = model.predict(input_data)[0]
+        sale_price = np.expm1(log_price)
+
+        st.success(f"💰 Estimated Sale Price: ${sale_price:,.0f}")
