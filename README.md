@@ -109,7 +109,7 @@ In `04_model_training.ipynb`, a Linear Regression model was trained to predict h
 
 -   Plotted **actual vs. predicted** values for test set to validate predictions
 
--   Saved the trained pipeline as `linreg_model.joblib` in the
+-   Saved the trained pipeline as `linreg_model.joblib` in the models/ directory.”
 
 ### ✅ Streamlit Interface: Project Summary Page
 
